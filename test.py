@@ -40,63 +40,6 @@ map in JAVA
         hash_Set.size();
         set.contains("Geeks")
 """
-def reverse(x):
-    negative = False
-    reversed = 0
-    if x < 1:
-        negative = True
-        x = abs(x)
-    while (x != 0):
-        lastdigit = x % 10
-        reversed = (reversed * 10) + lastdigit
-        x = x // 10
-    if negative:
-        reversed *= -1
-
-    return reversed
-
-
-def groupAnagrams(strs):
-    cache = {}
-    for i in strs:
-        orginal = i
-        org_ordered = str(sorted(i))
-        print(org_ordered)
-        if org_ordered in cache.keys():
-            cache[org_ordered] = cache[org_ordered] + [orginal]
-        else:
-            cache[org_ordered] = [orginal]
-    print(cache)
-    output = []
-    for key in cache:
-        output.append(cache[key])
-    return output
-
-
-def countElements(arr):
-    arr.sort()
-    if len(arr) <= 1:
-        return 0
-    count = 0
-    stack = [arr[0]]
-    i = 1
-    while i < len(arr):
-        lastindex = len(stack) - 1
-        if arr[i] > stack[lastindex] and arr[i] - stack[lastindex] == 1:
-            count += 1
-            x = stack.pop(lastindex)
-            if x in stack:
-                continue
-            else:
-                stack.append(arr[i])
-                i += 1
-        else:
-            stack.append(arr[i])
-            i += 1
-
-    return count
-
-
 def fun(S, T):
     index1 = 0
     for i in range(0, len(S)):
