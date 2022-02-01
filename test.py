@@ -2,14 +2,6 @@ import math
 import heapq
 from typing import List
 
-
-
-
-
-
-
-
-
 """
 map in JAVA 
         Map<Integer, Integer> Map1 = new HashMap<Integer, Integer>();
@@ -48,96 +40,6 @@ map in JAVA
         hash_Set.size();
         set.contains("Geeks")
 """
-
-
-def isValidwithoutcontent(self, s: str) -> bool:
-    list = []
-    if len(s) % 2 == 1:
-        return False
-    for i in s:
-        if i == '(' or i == '[' or i == '{':
-            list.append(i)
-        elif i == ')' and len(list) != 0:
-            if list.pop(len(list) - 1) == '(':
-                continue
-            else:
-                return False
-        elif i == '}' and len(list) != 0:
-            if list.pop(len(list) - 1) == '{':
-                continue
-            else:
-                return False
-        elif i == ']' and len(list) != 0:
-            if list.pop(len(list) - 1) == '[':
-                continue
-            else:
-                return False
-    if len(list) == 0:
-        return True
-    else:
-        return False
-
-
-def isValidwithcontent(s: str) -> bool:
-    list = []
-    for i in s:
-        if i != '(' or i != '[' or i != '{' or i != ')' or i != ']' or i != '}':
-            continue
-        if i == '(' or i == '[' or i == '{':
-            list.append(i)
-        elif i == ')' and len(list) != 0:
-            if list.pop(len(list) - 1) == '(':
-                continue
-            else:
-                return False
-        elif i == '}' and len(list) != 0:
-            if list.pop(len(list) - 1) == '{':
-                continue
-            else:
-                return False
-        elif i == ']' and len(list) != 0:
-            if list.pop(len(list) - 1) == '[':
-                continue
-            else:
-                return False
-    if len(list) == 0:
-        return True
-    else:
-        return False
-
-
-def twoSum(nums, target):
-    arr = []
-    x = False
-    size = len(nums)
-    for i in range(0, size):
-        for j in range(i + 1, size):
-            if (nums[i] + nums[j] == target):
-                arr[0] = i
-                arr[1] = j
-                x = True
-                break
-
-        if (x):
-            break
-    return arr
-
-
-def plusOne(digits):
-    i = len(digits) - 1
-    line = ""
-    while (i >= 0):
-        if (digits[i] < 9):
-            digits[i] += 1
-            return digits
-        else:
-            digits[i] = 0
-            line = str(digits[i]) + line
-            i -= 1
-    line = str(1) + line
-    return list(line)
-
-
 def reverse(x):
     negative = False
     reversed = 0
