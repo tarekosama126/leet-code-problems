@@ -2,45 +2,16 @@ import math
 import heapq
 from typing import List
 
-def numJewelsInStones(J, S):
-    answer = 0
-    lengthJ = len(J)
-    lengthS = len(S)
-    for i in range(0, lengthJ):
-        for j in range(0, lengthS):
-            if J[i] == S[i]:
-                answer += 1
-    return answer
 
 
-def defangIPaddr(address):
-    address = address.replace(".", "[.]");
-    return address;
 
 
-def decompressRLElist(nums):
-    i = 0;
-    answer = []
-    while (i != len(nums)):
-        freq = nums[i];
-        i += 1
-        val = nums[i];
-        i += 1
-        for j in range(0, freq):
-            answer.append(val)
-    return answer
 
 
-def subtractProductAndSum(n: int):
-    sum = 0
-    product = 1
-    digit = 0
-    while (n != 0):
-        digit = n % 10
-        sum = sum + digit
-        product = product * digit
-        n = n // 10
-    return product - sum
+
+
+
+
 
 
 def findNumbers(nums):
