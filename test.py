@@ -1,5 +1,5 @@
 import math
-import heapq
+
 from typing import List
 
 """
@@ -68,41 +68,10 @@ def fun(S, T):
     return True
 
 
-class MinStack:
-
-    def __init__(self):
-        self.stack = []
-
-    def push(self, x: int) -> None:
-        self.stack.append(x)
-
-    def pop(self) -> None:
-        if len(self.stack) == 0:
-            return []
-        else:
-            self.stack.pop(len(self.stack) - 1)
-
-    def top(self) -> int:
-        if len(self.stack) == 0:
-            return []
-        else:
-            return self.stack[len(self.stack) - 1]
-
-    def getMin(self) -> int:
-        if len(self.stack) == 0:
-            return []
-        else:
-            return min(self.stack)
 
 
-def lastStoneWeight(stones) -> int:
-    myneglist = [-x for x in stones]
-    heapq.heapify(myneglist)
-    while len(myneglist) >= 2:
-        x = heapq.heappop(myneglist) * -1
-        y = heapq.heappop(myneglist) * -1
-        heapq.heappush(myneglist, (x - y) * -1)
-    return myneglist(0) * -1
+
+
 
 
 def stringShift(s: str, shift: List[List[int]]):
