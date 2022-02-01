@@ -66,44 +66,10 @@ def fun(S, T):
 
     return True
 
-def isPalindrome(s: str) -> bool:
-    s = s.lower()
-    left = 0
-    right = len(s) - 1
-    while (left < right):
-        while (left < right and ((s[left].isalpha() or s[left].isnumeric()) == False)):
-            left += 1
-        while (left < right and ((s[right].isalpha() or s[right].isnumeric()) == False)):
-            right -= 1
-        if s[left] == s[right]:
-            left += 1
-            right -= 1
-        else:
-            return False
-    return True
 
 
-def myAtoi(str: str) -> int:
-    if len(str) == 0:
-        return 0
-    flag = True
-    str = str.strip()
-    start = 0
-    if str[0] == '-':
-        flag = False
-        start += 1
-    answer = 0
-    while (len(str) > start and str[start].isnumeric()):
-        answer = answer * 10 + int(str[start])
-        start += 1
 
-    if flag == False:
-        answer *= -1
-    if answer < -2147483648:
-        return -2147483648
-    if answer > 2147483647:
-        return 2147483647
-    return answer
+
 
 # print(isPalindrome(".,"))
 # firstUniqChar("leetcode")
