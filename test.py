@@ -10,50 +10,6 @@ from typing import List
 
 
 
-
-
-
-
-def findNumbers(nums):
-    count = 0
-    for i in range(0, len(nums)):
-        num = str(nums[i])
-        if (len(num) % 2 == 0):
-            count += 1
-    return count
-
-
-def sortArrayByParity(A):
-    size = len(A)
-    arr = [0] * size
-    i = 0
-    j = size - 1
-    for x in range(0, size):
-        if (i > j):
-            break
-        if (A[x] % 2 == 0):
-            arr[i] = A[x]
-            i += 1
-        else:
-            arr[j] = A[x]
-            j -= 1
-    return arr;
-
-
-def fizzBuzz(n):
-    list = []
-    for i in range(1, n + 1):
-        if i % 3 == 0 and i % 5 == 0:
-            list.append("FizzBuzz")
-        elif i % 3 == 0:
-            list.append("Fizz")
-        elif i % 5 == 0:
-            list.append("Buzz")
-        else:
-            list.append(str(i))
-    return list
-
-
 """
 map in JAVA 
         Map<Integer, Integer> Map1 = new HashMap<Integer, Integer>();
