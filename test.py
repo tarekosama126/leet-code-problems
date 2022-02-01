@@ -1,6 +1,5 @@
 import math
 
-from typing import List
 
 """
 map in JAVA 
@@ -73,99 +72,7 @@ def fun(S, T):
 
 
 
-
-def stringShift(s: str, shift: List[List[int]]):
-    absolute = 0
-    for i in shift:
-        if i[0] == 0:
-            absolute -= i[1]
-        else:
-            absolute += i[1]
-    print(absolute)
-    if absolute == 0:
-        return s
-    elif absolute < 0:
-        absolute = abs(absolute) % len(s)
-        if absolute == 0:
-            return s
-        first = s[:absolute]
-        second = s[absolute:]
-        return second + first
-    else:
-        absolute = absolute % len(s)
-        if absolute == 0:
-            return s
-        first = s[:len(s) - absolute]
-        second = s[len(s) - absolute:]
-        return second + first
-
-
-def minPathSum(grid: List[List[int]]):
-    row, col = len(grid), len(grid[0])
-    Matrix = [[0 for x in range(col)] for y in range(row)]
-    Matrix[0][0] = grid[0][0]
-    for j in range(1, col):
-        Matrix[0][j] = Matrix[0][j - 1] + grid[0][j]
-    for j in range(1, row):
-        Matrix[j][0] = Matrix[j - 1][0] + grid[j][0]
-    for i in range(1, row):
-        for j in range(1, col):
-            Matrix[i][j] = min(Matrix[i - 1][j], Matrix[i][j - 1]) + grid[i][j]
-    return Matrix[row - 1][col - 1]
-
-
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
-
-def bstFromPreorder(preorder: List[int]) -> TreeNode:
-    root = TreeNode(preorder[0])
-    index = 1
-    while index < len(preorder):
-        print(preorder[index])
-        insert(root, preorder[index])
-        index += 1
-    return root
-
-
-def PreorderTraversal(root):
-    res = []
-    if root:
-        res.append(root.val)
-        if root.left != None and root.right == None:
-            res = res + PreorderTraversal(root.left)
-            res.append(None)
-        elif root.right != None and root.left == None:
-            res.append(None)
-            res = res + PreorderTraversal(root.right)
-        else:
-            res = res + PreorderTraversal(root.left)
-            res = res + PreorderTraversal(root.right)
-
-    return res
-
-
-def insert(root, val):
-    if val < root.val and root.left == None:
-        root.left = TreeNode(val)
-
-        return
-    elif val < root.val and root.left != None:
-
-        insert(root.left, val)
-
-    elif val > root.val and root.right == None:
-        root.right = TreeNode(val)
-
-        return
-    elif val > root.val and root.right != None:
-
-        insert(root.right, val)
-
-
+from typing import List
 def findMaxLength(nums: List[int]) -> int:
     dict = {0: -1}
     count = 0
@@ -182,7 +89,7 @@ def findMaxLength(nums: List[int]) -> int:
             dict[count] = i
     return max_length
 
-
+from typing import List
 def productExceptSelf(nums: List[int]) -> List[int]:
     right_multiply = [0] * len(nums)
     right_multiply[-1] = nums[-1]
@@ -199,7 +106,7 @@ def productExceptSelf(nums: List[int]) -> List[int]:
     output[-1] = prefix
     return output
 
-
+from typing import List
 def rotate_array(nums: List[int], k: int) -> None:
     output = [0] * len(nums)
     for i in range(0, len(nums)):
